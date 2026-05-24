@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Atlas Industries: Enterprise Assistant — Agentic Internal Knowledge Chatbot — Graduation Project Brief</title>
+<style>
+  body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+  }
+  a { color: #0047FF; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul, ol { padding-left: 22px; }
+  ul li, ol li { margin-bottom: 8px; }
+  p { margin: 10px 0; }
+  .req-id { color: #0047FF; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div style="background-color:#f8faff;border-radius:12px;margin:0 auto 20px;max-width:1100px;padding:40px 24px;text-align:center;">
+  <h1 id="atlas-enterprise-assistant-agentic-internal-knowledge-chatbot-graduation-project"
+      style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:42px;line-height:1.2;margin:0;">
+    Atlas Industries: Enterprise Assistant — Agentic Internal Knowledge Chatbot
+  </h1>
+  <p>Agentic RAG + LangGraph Workflow + Domain Routing + Source Citations + Session Memory + Logging + DeepEval</p>
+  <p>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">Agentic RAG</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">LangGraph</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">Domain Routing</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">Cited Sources</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">Session Memory</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">DeepEval</span></span>
+    <span style="background-color:#0047FF;color:#ffffff;font-family:Tahoma,Arial,sans-serif;font-size:14px;"><span style="border-radius:20px;display:inline-block;margin:4px;padding:7px 12px;">Portfolio-Ready</span></span>
+  </p>
+</div>
+
+<!-- TASK ASSIGNMENT -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="task-assignment" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Task Assignment</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p><strong>Subject:</strong> GRADUATION PROJECT: Build an Agentic Internal Knowledge Chatbot for Atlas Industries — Your Portfolio Project</p>
+    <p><strong>From:</strong> Course Instructor</p>
+    <p><strong>Role:</strong> AI/ML Program — Graduation Sprint, Sprints</p>
+  </div>
+</div>
+
+<!-- EMAIL BODY -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="email-body" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Email Body</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p>Team,<br />
+      <br />
+      This is your <strong>graduation project</strong> — the one you put on your resume and walk through in interviews.<br />
+      <br />
+      You will build an agentic internal knowledge chatbot for <strong>Atlas Industries</strong>, a fictional mid-sized company with around 500 employees. Every week, employees waste time hunting through scattered PDFs, Word documents, and intranet pages for the same questions: <em>"How many vacation days do I have left as a new hire?"</em>, <em>"How do I reset my VPN password?"</em>, <em>"What is the limit for a hotel reimbursement on a domestic trip?"</em>. Your assistant will give clear, cited answers from the official company documents — and politely refuse when the answer isn't in them.<br />
+      <br />
+      The project must combine the core skills from this course: an <strong>agentic RAG pipeline</strong> over internal documents, a <strong>LangGraph workflow</strong> that routes questions to the right domain (HR, IT, Finance), a small set of <strong>typed tools</strong>, <strong>source citations</strong> on every answer, <strong>full-session chat memory</strong> so follow-ups work naturally, <strong>structured logging</strong> of each run, and a <strong>DeepEval evaluation script</strong> on a fixed set of 10 test questions.<br />
+      <br />
+      <strong>The corpus is hard on purpose.</strong> Documents come in <strong>three different file formats</strong> (Markdown, PDF, DOCX) and <strong>three languages</strong> (English, Arabic, and bilingual EN+AR mixed). Your ingestion pipeline must handle all of them. Several test questions span more than one document — your retrieval must be good enough to surface them.<br />
+      <br />
+      <strong>You choose the stack.</strong> Pick the LLM, the embeddings, the vector store, the chat front-end, and the logging library that fit best. The suggested-technologies section is inspiration, not a checklist. You will be asked in the interview to defend your choices — so pick ones you can explain.<br />
+      <br />
+      Keep it practical and shippable. Aim for something a junior engineer could pick up and extend in a few days. Show the workflow clearly — which domain the question was routed to, what was retrieved, and which document each fact came from.<br />
+      <br />
+      Target cost on the recommended free tier: <strong>$0</strong>.<br />
+      <br />
+      Best,<br />
+      The Instructor
+    </p>
+  </div>
+</div>
+
+<div style="margin:24px auto 0;max-width:1100px;text-align:center;">
+  <figure>
+    <img src="https://i.postimg.cc/wBR3ksF6/task-description.jpg"
+         style="border-radius:10px;height:auto;max-width:80%;"
+         alt="Task Description" />
+    <figcaption aria-hidden="true">Task Description</figcaption>
+  </figure>
+</div>
+
+<!-- ATTACHED -->
+<h2 id="attached-project-specifications"
+    style="color:#333333;font-family:Tahoma,Arial,sans-serif;font-size:30px;margin:28px 0 20px;text-align:center;">
+</h2>
+
+<!-- TASK GENERAL DESCRIPTION -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="task-general-description" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Task General Description</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p>You will build a full-stack agentic internal knowledge chatbot for Atlas Industries, a fictional company. An employee chats with the assistant through a web UI and asks things like <em>"How do I claim a taxi from the airport on a business trip?"</em>, <em>"What's the policy on remote work for new hires?"</em>, or <em>"My laptop won't connect to the VPN, what do I do?"</em>.</p>
+
+    <p><strong>The Workflow.</strong> Behind the chat, a LangGraph agentic workflow handles each question. At minimum the graph should: route the question into one of three domains (HR, IT Support, Finance &amp; Reimbursement); retrieve relevant context from the right slice of the corpus; decide whether a tool call would help; maintain session memory so the user can ask follow-up questions naturally; and answer with a short, cited response. The exact node layout is your design decision — document it in the final report.</p>
+
+    <p><strong>The Corpus.</strong> The corpus is intentionally messy. You will ingest 30 documents across HR, IT, and Finance — in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.md</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.pdf</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.docx</code> formats, in English, Arabic, and bilingual variants. Your loader, splitter, and embedding choices must work cross-format and cross-language. This is part of the grade.</p>
+
+    <p><strong>The Answer.</strong> Every answer must show its sources: the document filename (and ideally the snippet) that supports each claim. If the answer is not in the corpus, the assistant says so clearly and never invents one. Every run must be observable: a single <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> follows the question through routing, retrieval, tool calls, and the final answer, written to a structured log.</p>
+
+    <p><strong>The Evaluation.</strong> A DeepEval evaluation script measures, on a fixed set of 10 gold questions, the following: routing accuracy (custom check — did the router pick the right domain?), and the standard DeepEval RAG metrics — <em>Faithfulness</em>, <em>Answer Relevancy</em>, <em>Contextual Precision</em>, <em>Contextual Recall</em>, and <em>Hallucination</em>.</p>
+
+    <p><strong>The Scope.</strong> You are <strong>not</strong> building a fine-tuned model, a full enterprise SSO integration, or a production-grade multi-tenant system. You are building a focused, high-quality agentic RAG pipeline with clear observability and honest evaluation — the kind of project an examiner can grade in 20 minutes and a recruiter can demo in 5.</p>
+  </div>
+</div>
+
+<!-- TECHNOLOGIES -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="suggested-technologies" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Suggested Technologies (Not Mandatory)</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+
+    <p>The only required pieces are: <strong>Python</strong>, <a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;"><strong>LangGraph</strong></a> for the agentic workflow, an <strong>LLM</strong>, and <a href="https://docs.confident-ai.com/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;"><strong>DeepEval</strong></a> for evaluation. Everything else is your call — pick what fits, justify it in the final report.</p>
+
+    <p>Common options you might consider:</p>
+
+    <ul>
+      <li><strong>LLM &amp; embeddings:</strong> Google Gemini, OpenAI, Groq, or a local Ollama model — whichever you can use for free. Since the corpus is mixed English / Arabic, pick embeddings that handle both languages well (e.g. <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">BAAI/bge-m3</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">intfloat/multilingual-e5-large</code>, or Cohere multilingual).</li>
+      <li><strong>RAG primitives:</strong> <a href="https://python.langchain.com/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">LangChain</a>, <a href="https://docs.llamaindex.ai/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">LlamaIndex</a>, or your own loader / splitter / retriever code.</li>
+      <li><strong>Document loaders:</strong> the corpus has <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.md</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.pdf</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.docx</code>. Consider <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">pypdf</code> or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">pdfplumber</code> for PDFs, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">python-docx</code> or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">unstructured</code> for Word, and a plain reader for Markdown.</li>
+      <li><strong>Vector store:</strong> FAISS, Chroma, Qdrant, Weaviate, or pgvector — local or free-tier cloud.</li>
+      <li><strong>Chat front-end:</strong> <a href="https://docs.chainlit.io/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">Chainlit</a>, <a href="https://streamlit.io/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">Streamlit</a>, <a href="https://www.gradio.app/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">Gradio</a>, or a minimal FastAPI + simple HTML UI.</li>
+      <li><strong>Session memory:</strong> LangGraph's built-in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">MemorySaver</code> / checkpointer, LangChain memory classes, or your own in-process store keyed by session ID.</li>
+      <li><strong>Tool schemas / validation:</strong> <a href="https://docs.pydantic.dev/" target="_blank" rel="noopener noreferrer" style="color:#0047FF;text-decoration:none;">Pydantic</a> is the conventional choice.</li>
+      <li><strong>Logging:</strong> Python <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">logging</code> with a JSON formatter, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">structlog</code>, or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">loguru</code>.</li>
+      <li><strong>Evaluation (required):</strong> DeepEval — <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FaithfulnessMetric</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">AnswerRelevancyMetric</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">ContextualPrecisionMetric</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">ContextualRecallMetric</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">HallucinationMetric</code>, plus a small custom routing-accuracy check. Make sure your judge LLM handles Arabic well.</li>
+      <li><strong>Secrets:</strong> <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">python-dotenv</code> or any equivalent — never commit API keys.</li>
+    </ul>
+
+    <p>In your final report, write one short paragraph per major choice (LLM, vector store, chat UI, eval approach) explaining <em>why</em> you picked it over the alternatives. This is what interviewers actually ask about.</p>
+  </div>
+</div>
+
+<div style="margin:24px auto 0;max-width:1100px;text-align:center;">
+  <figure>
+    <img src="https://i.postimg.cc/v838fBhc/tools.jpg"
+         style="border-radius:10px;height:auto;max-width:80%;"
+         alt="Toolbox" />
+    <figcaption aria-hidden="true">Toolbox</figcaption>
+  </figure>
+</div>
+
+<!-- REAL CASE SCENARIO -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="real-case-scenario" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Real Case Scenario</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p><strong>Atlas Industries</strong> is a fictional mid-sized company with around 500 employees. Today, when an employee asks <em>"How do I get reimbursed for a client dinner?"</em> they either ping a colleague, dig through an outdated intranet, or open a ticket and wait two days. The HR, IT, and Finance teams answer the same dozen questions over and over.</p>
+
+    <p>Anchor your demo in this run:</p>
+
+    <ul>
+      <li><strong>Turn 1:</strong> <em>"I'm a new joiner. I traveled to a client meeting last week and paid for a taxi and a hotel. How do I submit the reimbursement, and how many days do I have to do it?"</em> → Router picks <strong>Finance</strong>, retrieval over <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-001-travel-reimbursement-policy.md</code> and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-002-expense-claim-sop.pdf</code>, one tool call to look up the submission window, cited answer.</li>
+      <li><strong>Turn 2 (follow-up — exercises memory):</strong> <em>"And what's the cap on the hotel for a domestic trip?"</em> → The agent uses session memory to know "domestic trip" refers to the same scenario, retrieves the cap (1,500 EGP per night), cites the same policy.</li>
+      <li><strong>Turn 3 (Arabic — exercises cross-language retrieval):</strong> <em>"كم الحد الأقصى لعشاء العملاء لكل شخص؟"</em> → Router picks <strong>Finance</strong>, retrieves <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-009-عشاء-العملاء.docx</code>, returns "2,000 جنيه مصري لكل شخص" with the source.</li>
+    </ul>
+
+    <p>This three-turn scenario is your <strong>demo target</strong>. Whatever you build, it should handle these turns cleanly and produce defensible cited answers in front of your supervisor.</p>
+  </div>
+</div>
+
+<!-- DATASET -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="dataset" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Dataset</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+
+    <p>The dataset is provided to you as a single bundle, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">atlas-corpus.zip</code>. It contains the full document corpus and the gold evaluation cases.</p>
+
+    <p><strong>Contents:</strong></p>
+    <ul>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/hr/</code> — 10 HR documents (vacation, sick leave, onboarding, remote work, code of conduct, performance review, leave types, hiring, flexible hours, grievance).</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/it/</code> — 10 IT Support documents (VPN, password reset, laptop provisioning, software request, incident response, acceptable use, email, network, MFA).</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/finance/</code> — 10 Finance documents (travel reimbursement, expense claim SOP, procurement, per diem, corporate card, invoice approval, international travel, transport allowance, client dining, vendor payment).</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/eval_cases.jsonl</code> — 10 gold evaluation cases.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">Why This Corpus Is Hard</h3>
+
+    <p><strong>Three file formats.</strong> Each domain has roughly 4 Markdown, 3 PDF, and 3 DOCX files. Your loader must handle all three — text extraction quirks differ between them (PDFs can break paragraphs mid-sentence, DOCX preserves structure better, Markdown is clean but headings need stripping).</p>
+
+    <p><strong>Three language profiles.</strong> Roughly 60% of documents are English, 30% are Arabic, and 10% are bilingual (EN + AR side by side). Picking the wrong embedding model means an Arabic question fails to retrieve an Arabic document, even when the answer is right there. <strong>Use multilingual embeddings.</strong></p>
+
+    <p><strong>Right-to-left filenames.</strong> Some filenames contain Arabic characters (e.g. <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-009-عشاء-العملاء.docx</code>). Your ingestion pipeline and your citation logic must preserve these correctly through reading, indexing, and rendering.</p>
+
+    <p><strong>Cross-document questions.</strong> Several evaluation questions need facts from two different documents (for example, the question about hotel caps + submission window requires both <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-001</code> and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-002</code>). Single-document retrieval will lose points on Contextual Recall.</p>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">Eval Case Schema</h3>
+
+    <p>Each line in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/eval_cases.jsonl</code> is a JSON object with the following fields:</p>
+
+    <table style="border-collapse:collapse;font-family:Tahoma,Arial,sans-serif;width:100%;">
+      <thead>
+        <tr>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">Field</th>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">Type</th>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">id</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">string</td><td style="border:1px solid #dfe7ff;padding:10px 12px;">Stable case ID (EVAL-001 to EVAL-010).</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">input</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">string</td><td style="border:1px solid #dfe7ff;padding:10px 12px;">The user question, in EN or AR.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">expected_domain</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">string</td><td style="border:1px solid #dfe7ff;padding:10px 12px;">One of <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">hr</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">it</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">finance</code>. Used for routing accuracy.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">expected_output</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">string</td><td style="border:1px solid #dfe7ff;padding:10px 12px;">A reference answer, factually correct and paraphrased.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">expected_sources</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">array</td><td style="border:1px solid #dfe7ff;padding:10px 12px;">Filenames whose content supports the answer.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">language</code></td><td style="border:1px solid #dfe7ff;padding:10px 12px;">string</td><td style="border:1px solid #dfe7ff;padding:10px 12px;"><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">en</code> or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">ar</code>.</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">Setup Steps</h3>
+    <ol>
+      <li>Unzip <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">atlas-corpus.zip</code> at the root of your repo. The provided folder structure (<code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/{hr,it,finance}/</code> and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/eval_cases.jsonl</code>) must be preserved exactly. Do <strong>not</strong> rename files — the eval cases reference them by filename.</li>
+      <li>Open the inner <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">README.md</code> to skim the locked facts before writing your ingestion code.</li>
+      <li>Verify your repo has all 30 documents and that filenames containing Arabic characters open correctly on your OS.</li>
+      <li>Confirm your chosen PDF and DOCX loaders extract the Arabic text correctly. If your loader returns scrambled glyphs for the Arabic PDFs, switch tools — this is a known sign of bad extraction.</li>
+    </ol>
+
+    <p><strong>Known concerns to acknowledge:</strong> the corpus is small (30 documents), so retrieval ranking is sensitive to chunk size. Document this choice. Also, the bilingual documents will appear in retrieval results for both languages — that's fine, just make sure your prompt asks the model to respond in the user's language.</p>
+  </div>
+</div>
+
+<!-- FUNCTIONAL REQUIREMENTS -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="functional-requirements" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Functional Requirements</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:8px 0 10px;">A. Environment &amp; Setup</h3>
+    <ul>
+      <li><span class="req-id">FR-A1</span> — <strong>Reproducible Python environment.</strong> Create a Python 3.10+ virtual environment with pinned versions in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">requirements.txt</code>. A fresh clone + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">pip install</code> must succeed without manual edits.</li>
+      <li><span class="req-id">FR-A2</span> — <strong>Project structure.</strong> Implement the directory layout in <em>Final Deliverables</em>. Top-level packages contain an <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">__init__.py</code> where imports require it.</li>
+      <li><span class="req-id">FR-A3</span> — <strong>Secrets in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env</code>.</strong> API keys and tokens are read from environment variables via <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">python-dotenv</code> (or equivalent). Commit only <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env.example</code>.</li>
+      <li><span class="req-id">FR-A4</span> — <strong>Configuration file.</strong> Centralize tunable values (paths, top-k, chunk size, model names, max-step limit) in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">src/settings.py</code>. Hard-coded values scattered through the codebase fail this requirement.</li>
+      <li><span class="req-id">FR-A5</span> — <strong>Git hygiene.</strong> Include a <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.gitignore</code> that excludes <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.venv/</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">__pycache__/</code>, the vector index, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env</code>.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">B. Corpus &amp; Ingestion</h3>
+    <ul>
+      <li><span class="req-id">FR-B1</span> — <strong>Place the corpus as provided.</strong> Unzip into <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/hr/</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/it/</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/finance/</code>. Do not rename, merge, or remove files.</li>
+      <li><span class="req-id">FR-B2</span> — <strong>Multi-format loader.</strong> Implement loaders for <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.md</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.pdf</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.docx</code>. The ingestion script must not silently skip a format it doesn't recognize — it must fail loudly.</li>
+      <li><span class="req-id">FR-B3</span> — <strong>Arabic-safe extraction.</strong> Verify Arabic and bilingual documents are extracted with correct character order (RTL preserved, no scrambled glyphs). Sample the output of at least one Arabic PDF and one Arabic DOCX in your EDA notebook.</li>
+      <li><span class="req-id">FR-B4</span> — <strong>Chunking.</strong> Pick a chunking strategy (recursive character splitter, semantic splitter, or paragraph-based) and document the choice. Chunk size and overlap live in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">settings.py</code>.</li>
+      <li><span class="req-id">FR-B5</span> — <strong>Metadata tagging.</strong> Every chunk carries at minimum: <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">domain</code> (hr/it/finance), <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">source_filename</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">language</code> (en/ar/bilingual). Citations depend on this.</li>
+      <li><span class="req-id">FR-B6</span> — <strong>Multilingual embeddings.</strong> Use an embedding model that handles English and Arabic. Justify the choice in the final report.</li>
+      <li><span class="req-id">FR-B7</span> — <strong>Index persistence.</strong> The vector index is built once and persisted to disk. A re-run of the app loads the existing index unless explicitly told to rebuild.</li>
+      <li><span class="req-id">FR-B8</span> — <strong>Reset script.</strong> Provide <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">scripts/reset.sh</code> (or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">scripts/reset.py</code>) that wipes the index and rebuilds it from <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/</code> in one command.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">C. Retrieval</h3>
+    <ul>
+      <li><span class="req-id">FR-C1</span> — <strong>Domain-filtered retrieval.</strong> The retriever accepts a domain (<code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">hr</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">it</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">finance</code>) and filters chunks by the metadata tag. Bilingual documents must be retrievable regardless of the question's language.</li>
+      <li><span class="req-id">FR-C2</span> — <strong>Top-k configurable.</strong> The number of retrieved chunks (top-3, top-5, etc.) is a config value, not a hard-coded constant.</li>
+      <li><span class="req-id">FR-C3</span> — <strong>Source preservation.</strong> Retrieved chunks include the source filename in the returned object. The downstream answer step uses this for citations.</li>
+      <li><span class="req-id">FR-C4</span> — <strong>Cross-language retrieval works.</strong> An Arabic question must surface relevant Arabic chunks even if the corpus contains English near-matches. Verify in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">notebooks/02_retrieval.ipynb</code> with sample queries from <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">eval_cases.jsonl</code>.</li>
+      <li><span class="req-id">FR-C5</span> — <strong>Optional reranking.</strong> If you add a reranker (cross-encoder, LLM-judged rerank, MMR), document it. Reranking is not required.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">D. LangGraph Workflow</h3>
+    <ul>
+      <li><span class="req-id">FR-D1</span> — <strong>Required responsibilities.</strong> The graph includes at least: a <em>router</em> node, a <em>memory loader</em>, a <em>retriever</em> node, an <em>agent</em> node that decides on tool calls, an <em>answer</em> node that composes a cited reply, and a <em>memory writer</em>. The node layout itself is your design choice.</li>
+      <li><span class="req-id">FR-D2</span> — <strong>Router with fallback.</strong> The router classifies the question into <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">hr</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">it</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">finance</code>. When confidence is low, a sensible fallback (e.g. fan out to all domains, ask the user, or default-to-most-likely) is taken. Document the choice.</li>
+      <li><span class="req-id">FR-D3</span> — <strong>State schema.</strong> The graph state is a typed object (Pydantic / TypedDict). At minimum it carries: <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">question</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">domain</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">retrieved_chunks</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tool_calls</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">answer</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">sources</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">session_id</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code>.</li>
+      <li><span class="req-id">FR-D4</span> — <strong>Max-step counter.</strong> Enforce a per-run maximum step count (recommended 8 to 12). On overflow, route to a fallback node that answers with explicit uncertainty rather than looping forever.</li>
+      <li><span class="req-id">FR-D5</span> — <strong>Max tool-call limit.</strong> Enforce a per-run maximum tool-call count (recommended 3). On overflow, the agent must answer with whatever it has.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">E. Session Memory</h3>
+    <ul>
+      <li><span class="req-id">FR-E1</span> — <strong>Full-session memory.</strong> Within a chat session, every prior turn (user question + agent answer) is available to the agent. A follow-up like <em>"and what about international trips?"</em> must resolve correctly against the previous turn.</li>
+      <li><span class="req-id">FR-E2</span> — <strong>Session scoping.</strong> Memory is keyed by <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">session_id</code> (or LangGraph thread ID). A new session has empty memory.</li>
+      <li><span class="req-id">FR-E3</span> — <strong>Reset on new session.</strong> Starting a fresh chat clears memory. Cross-session persistence is optional (bonus).</li>
+      <li><span class="req-id">FR-E4</span> — <strong>Demoable in the recording.</strong> The 60–90 second demo must include at least one multi-turn exchange where memory clearly matters.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">F. Tools</h3>
+    <ul>
+      <li><span class="req-id">FR-F1</span> — <strong>Three typed tools, minimum.</strong> Each tool has a Pydantic input schema and a typed return. Suggested ideas: a policy lookup by ID (e.g. <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">FIN-VAC-001</code>), a reimbursement calculator over a list of items, a list-leave-types tool.</li>
+      <li><span class="req-id">FR-F2</span> — <strong>Validation errors recover.</strong> Bad tool input is caught by Pydantic, returned to the agent as a feedback message, and the agent gets one more attempt. The app does not crash.</li>
+      <li><span class="req-id">FR-F3</span> — <strong>Tool selection is sensible.</strong> The agent calls a tool only when it actually helps — not on every turn. Document the heuristic.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">G. Answers &amp; Citations</h3>
+    <ul>
+      <li><span class="req-id">FR-G1</span> — <strong>Every answer is cited.</strong> Each answer ends with a short "Sources" section listing the document filenames used. If the answer is not in the corpus, the answer reads <em>"I couldn't find this in the company documents"</em> — never invent one.</li>
+      <li><span class="req-id">FR-G2</span> — <strong>Source list is real.</strong> The cited filenames are filenames that actually exist in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/</code>. Invented filenames are an immediate fail.</li>
+      <li><span class="req-id">FR-G3</span> — <strong>Answer in the user's language.</strong> If the user asks in Arabic, the answer is in Arabic. If the user asks in English, the answer is in English. The prompt should make this explicit.</li>
+      <li><span class="req-id">FR-G4</span> — <strong>No fabricated policies.</strong> The agent must not invent a policy ID, an amount, a date, or a procedure that is not in retrieval. This rule is enforced by the DeepEval <em>Faithfulness</em> and <em>Hallucination</em> metrics.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">H. Chat UI</h3>
+    <ul>
+      <li><span class="req-id">FR-H1</span> — <strong>Single-command launch.</strong> The chat UI launches with one command (e.g. <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">python app.py</code> or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">chainlit run app.py</code>). Framework is your choice.</li>
+      <li><span class="req-id">FR-H2</span> — <strong>Workflow steps visible.</strong> The UI displays, for each turn: the chosen domain, the retrieved source filenames, any tool calls, and the final cited answer. Collapsible panels are fine.</li>
+      <li><span class="req-id">FR-H3</span> — <strong>Right-to-left rendering.</strong> Arabic answers render correctly (RTL direction). Test with one of the Arabic eval questions before submission.</li>
+      <li><span class="req-id">FR-H4</span> — <strong>New-session control.</strong> The UI has a clearly labeled "New chat" or "Reset" control that starts a fresh session.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">I. Logging &amp; Observability</h3>
+    <ul>
+      <li><span class="req-id">FR-I1</span> — <strong>Run identifier.</strong> Each question is assigned a unique <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> (UUID) at the start of the graph. The same <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> tags every event for that turn.</li>
+      <li><span class="req-id">FR-I2</span> — <strong>Structured log line per event.</strong> One JSON line per event — router decision, retrieval hits (with filenames), each tool call (with input and output), final answer — written to <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/run_logs.jsonl</code>.</li>
+      <li><span class="req-id">FR-I3</span> — <strong>Demoable inspection.</strong> A grader should be able to <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">grep</code> by <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> and read the full timeline of one question end to end.</li>
+      <li><span class="req-id">FR-I4</span> — <strong>No PII in logs.</strong> Logs may contain the question and answer, but should not contain raw API keys or full document bodies. Use chunk IDs / filenames, not entire chunks.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">J. Evaluation (DeepEval)</h3>
+    <ul>
+      <li><span class="req-id">FR-J1</span> — <strong>Evaluation script.</strong> <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/evaluate.py</code> reads <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/eval_cases.jsonl</code>, runs each case through the workflow, and produces <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/eval_report.json</code>.</li>
+      <li><span class="req-id">FR-J2</span> — <strong>Test-case construction.</strong> Each case is converted to a DeepEval <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">LLMTestCase</code> with <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">input</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">actual_output</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">expected_output</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">retrieval_context</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">context</code>.</li>
+      <li><span class="req-id">FR-J3</span> — <strong>Required metrics.</strong> Report all five: <em>FaithfulnessMetric</em>, <em>AnswerRelevancyMetric</em>, <em>ContextualPrecisionMetric</em>, <em>ContextualRecallMetric</em>, <em>HallucinationMetric</em>.</li>
+      <li><span class="req-id">FR-J4</span> — <strong>Custom routing accuracy.</strong> Compare each case's chosen domain against <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">expected_domain</code>. Report overall accuracy and per-case pass/fail in the same JSON report.</li>
+      <li><span class="req-id">FR-J5</span> — <strong>Judge LLM choice.</strong> The judge LLM must handle Arabic. If your primary LLM is weak on Arabic, use a different one as the judge — document the choice.</li>
+      <li><span class="req-id">FR-J6</span> — <strong>Report structure.</strong> <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">eval_report.json</code> includes per-metric averages, pass/fail counts, and per-case detail (id, input, predicted domain, expected domain, actual output, expected output, metric scores).</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">K. Documentation &amp; Demo Assets</h3>
+    <ul>
+      <li><span class="req-id">FR-K1</span> — <strong>README structure.</strong> Project overview, screenshots, 5-command Quick Start, results table, architecture diagram, file tree, known limitations.</li>
+      <li><span class="req-id">FR-K2</span> — <strong>Architecture diagram.</strong> Produce <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">docs/architecture.png</code> showing the LangGraph node layout and the end-to-end flow.</li>
+      <li><span class="req-id">FR-K3</span> — <strong>Screen recording.</strong> Record a 60–90 second walkthrough as <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">docs/demo.gif</code> or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">demo.mp4</code>, including at least one multi-turn exchange that exercises memory and at least one Arabic question.</li>
+      <li><span class="req-id">FR-K4</span> — <strong>Final report.</strong> A 3-page <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/final_report.md</code> covering the architecture, the stack choices (and <em>why</em>), the LangGraph design (with the memory mechanism), the RAG design, the routing logic, the tools, the DeepEval results (with a short comment on each metric), and known limitations.</li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin:24px auto 0;max-width:1100px;text-align:center;">
+  <figure>
+    <img src="https://i.postimg.cc/yYfd4Tb1/req.jpg"
+         style="border-radius:10px;height:auto;max-width:80%;"
+         alt="Functional Requirements" />
+    <figcaption aria-hidden="true">Functional Requirements</figcaption>
+  </figure>
+</div>
+
+<!-- NON-FUNCTIONAL REQUIREMENTS -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="non-functional-requirements" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Non-Functional Requirements</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+
+    <p>Non-functional requirements describe <em>how well</em> the system behaves — cost, performance, code quality, security, reliability. A project that passes the functional checklist but fails these will still feel amateur to an examiner.</p>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">A. Cost &amp; Licensing</h3>
+    <ul>
+      <li><span class="req-id">NFR-A1</span> — <strong>Zero-dollar build.</strong> Every dependency, model, and tool runs on a free tier or locally. No credit card, no paid cloud account, no paid embedding API.</li>
+      <li><span class="req-id">NFR-A2</span> — <strong>License compatibility.</strong> Every Python package is under a permissive license (MIT / BSD / Apache 2.0). Add a <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">LICENSE</code> file to the repo (MIT is fine).</li>
+      <li><span class="req-id">NFR-A3</span> — <strong>No real employer data.</strong> The corpus is 100% fictional Atlas Industries content. Do not add, replace, or augment with any document from a real employer.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">B. Performance</h3>
+    <ul>
+      <li><span class="req-id">NFR-B1</span> — <strong>End-to-end latency.</strong> A typical question (after the graph and embeddings are warm) returns an answer in under 8 seconds on a normal laptop. Cold-start latency is allowed to be higher.</li>
+      <li><span class="req-id">NFR-B2</span> — <strong>Ingestion time.</strong> Full ingestion of the 30-document corpus completes in under 2 minutes on a normal laptop, no GPU.</li>
+      <li><span class="req-id">NFR-B3</span> — <strong>UI responsiveness.</strong> The chat UI shows incremental progress (e.g. "Routing…", "Retrieving…") rather than freezing while the graph runs.</li>
+      <li><span class="req-id">NFR-B4</span> — <strong>Memory footprint.</strong> The running app stays under 1 GB of RAM. Do not accidentally pickle the entire raw corpus inside the index.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">C. Code Quality</h3>
+    <ul>
+      <li><span class="req-id">NFR-C1</span> — <strong>One responsibility per file.</strong> No file in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">src/</code> exceeds about 250 lines. A reviewer can navigate the repo in 5 minutes.</li>
+      <li><span class="req-id">NFR-C2</span> — <strong>Type hints.</strong> Every public function in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">src/</code> has typed parameters and a typed return.</li>
+      <li><span class="req-id">NFR-C3</span> — <strong>Docstrings.</strong> Every public function has a summary, args, and returns docstring. Non-obvious lines (router prompt, retrieval reranking, threshold values) have a one-line comment explaining <em>why</em>.</li>
+      <li><span class="req-id">NFR-C4</span> — <strong>Formatting.</strong> Run <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">black</code> on every Python file before committing. Mention this in the README.</li>
+      <li><span class="req-id">NFR-C5</span> — <strong>No dead code.</strong> Remove commented-out experiments, unused imports, abandoned functions, and TODO markers before submission.</li>
+      <li><span class="req-id">NFR-C6</span> — <strong>Linter clean.</strong> <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">ruff check .</code> produces zero errors. Warnings are OK if justified in the README.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">D. Reliability &amp; Robustness</h3>
+    <ul>
+      <li><span class="req-id">NFR-D1</span> — <strong>Bad tool input recovers.</strong> A tool call with invalid input is caught and surfaced to the agent as feedback; the agent has one more chance to answer.</li>
+      <li><span class="req-id">NFR-D2</span> — <strong>Empty retrieval handled.</strong> When retrieval returns nothing relevant, the agent answers <em>"I couldn't find this in the company documents"</em> — not a guess.</li>
+      <li><span class="req-id">NFR-D3</span> — <strong>API failure handled.</strong> If the LLM call fails (rate limit, network), the agent retries once and then surfaces a user-friendly message rather than a stack trace.</li>
+      <li><span class="req-id">NFR-D4</span> — <strong>Missing index fallback.</strong> If the vector index is missing, the app shows a clear message instructing the user to run the ingestion script — not a Python traceback.</li>
+      <li><span class="req-id">NFR-D5</span> — <strong>No silent <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">except: pass</code>.</strong> Every caught exception either surfaces a user-facing message or logs a warning.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">E. Security &amp; Privacy</h3>
+    <ul>
+      <li><span class="req-id">NFR-E1</span> — <strong>No secrets in the repo.</strong> API keys live in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env</code>. Commit only <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env.example</code>.</li>
+      <li><span class="req-id">NFR-E2</span> — <strong>No PII in logs.</strong> Log filenames, chunk IDs, and high-level events — not full document bodies, not API keys, not raw user questions if they contain sensitive content.</li>
+      <li><span class="req-id">NFR-E3</span> — <strong>Local-only persistence.</strong> The vector index, the run log, and the eval report are all written locally. No outbound network calls except to the chosen LLM and embedding APIs.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">F. Reproducibility &amp; Portability</h3>
+    <ul>
+      <li><span class="req-id">NFR-F1</span> — <strong>Five-command Quick Start.</strong> The README gets a stranger from "git clone" to a running chat in five commands or fewer: clone, install, set the API key, ingest, run.</li>
+      <li><span class="req-id">NFR-F2</span> — <strong>OS portability.</strong> Runs on Windows, macOS, and Linux. Use <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">pathlib.Path</code>, not hard-coded slashes.</li>
+      <li><span class="req-id">NFR-F3</span> — <strong>Pinned dependencies.</strong> <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">requirements.txt</code> uses exact version pins. Version drift can silently change retrieval or eval scores.</li>
+      <li><span class="req-id">NFR-F4</span> — <strong>No GPU required.</strong> Both ingestion and inference run on CPU.</li>
+      <li><span class="req-id">NFR-F5</span> — <strong>Internet required only for ingestion + LLM calls.</strong> The app does not need any other network access.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">G. Maintainability &amp; Extensibility</h3>
+    <ul>
+      <li><span class="req-id">NFR-G1</span> — <strong>Configuration over hard-coding.</strong> Anything you might want to tune after submission (chunk size, top-k, model names, thresholds) lives in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">src/settings.py</code>.</li>
+      <li><span class="req-id">NFR-G2</span> — <strong>Adding a new tool is one file.</strong> A new tool is added by writing a Pydantic schema + function in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">src/tools.py</code> and registering it — no graph rewrite.</li>
+      <li><span class="req-id">NFR-G3</span> — <strong>Adding a domain is one config entry.</strong> Adding a fourth domain (say, Legal) should require adding the folder, updating one router-prompt entry, and re-running ingestion.</li>
+    </ul>
+
+  </div>
+</div>
+
+<div style="margin:24px auto 0;max-width:1100px;text-align:center;">
+  <figure>
+    <img src="https://i.postimg.cc/xdmTmVT8/non-fun.jpg"
+         style="border-radius:10px;height:auto;max-width:80%;"
+         alt="Non-Functional Requirements" />
+    <figcaption aria-hidden="true">Non-Functional Requirements</figcaption>
+  </figure>
+</div>
+
+<!-- ARCHITECTURE -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="system-architecture" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">System Architecture</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p>The system has three layers, separated cleanly so each one is easy to grade and easy to demo.</p>
+
+    <table style="border-collapse:collapse;font-family:Tahoma,Arial,sans-serif;width:100%;">
+      <colgroup>
+        <col style="width:33%" /><col style="width:33%" /><col style="width:33%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:16px;line-height:1.6;padding:14px;vertical-align:top;">
+            <strong>Layer 1 — Ingestion &amp; Index</strong><br />
+            Multi-format loader (MD, PDF, DOCX) → cleaning → chunking → multilingual embedding → vector store, with <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">domain</code>, <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">source_filename</code>, and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">language</code> metadata on each chunk.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:16px;line-height:1.6;padding:14px;vertical-align:top;">
+            <strong>Layer 2 — LangGraph Agent</strong><br />
+            A typed graph with router, memory loader, domain-filtered retriever, agent (with three typed tools), answer composer, and memory writer. State carries the <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">session_id</code> through every node.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:16px;line-height:1.6;padding:14px;vertical-align:top;">
+            <strong>Layer 3 — Chat UI + Observability</strong><br />
+            Chat front-end of your choice. Each turn displays the routed domain, retrieved sources, tool calls, and the cited answer. Structured JSON logs go to <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/run_logs.jsonl</code>; the DeepEval script reads them offline.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">End-to-End Workflow</h3>
+    <table style="border-collapse:collapse;font-family:Tahoma,Arial,sans-serif;width:100%;">
+      <colgroup>
+        <col style="width:25%" /><col style="width:25%" /><col style="width:25%" /><col style="width:25%" />
+      </colgroup>
+      <tbody>
+        <tr>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>1. Receive</strong><br />Employee types a question. A <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> and <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">session_id</code> are attached.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>2. Load Memory</strong><br />Prior turns for the session are loaded into state so follow-ups resolve.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>3. Route</strong><br />Router classifies into <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">hr</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">it</code> / <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">finance</code>, or falls back.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>4. Retrieve</strong><br />Top-k chunks are fetched from the vector store, filtered by domain.
+          </td>
+        </tr>
+        <tr>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>5. Decide</strong><br />The agent decides whether a tool call helps (and bounded by max-step / max-tool limits).
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>6. Answer</strong><br />A short reply is composed in the user's language, with a "Sources" section listing filenames.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>7. Persist &amp; Log</strong><br />The turn is appended to session memory; every event is written to <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_logs.jsonl</code>.
+          </td>
+          <td style="background-color:#f8faff;border:1px solid #dfe7ff;border-radius:8px;font-size:15px;line-height:1.6;padding:12px;vertical-align:top;">
+            <strong>8. Evaluate (offline)</strong><br /><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/evaluate.py</code> runs the 10 gold cases through DeepEval and writes <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">eval_report.json</code>.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ACCEPTANCE CRITERIA -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="acceptance-criteria" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Acceptance Criteria</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <ul>
+      <li>The chat UI starts with a single command and accepts chat input.</li>
+      <li>The three-turn reimbursement scenario from <em>Real Case Scenario</em> runs end-to-end, with visible steps for routing, retrieval, the tool call, and the cited answer.</li>
+      <li><strong>Session memory works</strong>: a follow-up question that depends on the previous turn is answered correctly using the prior context. This must be visible in the demo.</li>
+      <li><strong>Arabic works</strong>: at least one Arabic question in the demo returns a correct, cited, RTL-rendered answer.</li>
+      <li>Tool-call limits are enforced; at least one validation error is recovered from without crashing.</li>
+      <li>Every answer either cites at least one real source filename, or explicitly says the answer is not in the corpus.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/run_logs.jsonl</code> shows every event tagged with the same <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">run_id</code> for one full run.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/evaluate.py</code> runs successfully against the provided <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">eval_cases.jsonl</code> and produces <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/eval_report.json</code> with scores for all five DeepEval metrics plus the custom routing accuracy.</li>
+      <li>No fabricated policies — every fact mentioned in any answer maps to a real document in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/</code>.</li>
+      <li>Final report is at most 3 pages and explains the stack choices and design decisions clearly.</li>
+      <li>Total cost on the deliverable = $0.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- OPTIONAL BONUS -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="optional-bonus" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Optional Bonus Features</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p>Not required for a passing grade. Pick one or two only if you finish the core requirements early and want to stand out in interviews.</p>
+    <ul>
+      <li><strong>Role-Based Access Control (RBAC):</strong> add a fake <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">user_role</code> (employee / manager / finance_admin) and restrict some documents to certain roles at retrieval time.</li>
+      <li><strong>MCP tool server:</strong> expose your tools through an MCP server instead of in-process functions.</li>
+      <li><strong>Prompt-injection guard:</strong> a simple input filter that catches obvious prompt-injection attempts in the user message.</li>
+      <li><strong>Persistent cross-session memory:</strong> go beyond in-session memory and persist conversations across sessions (per user) using SQLite or a LangGraph checkpointer.</li>
+      <li><strong>Custom G-Eval metric:</strong> on top of the required DeepEval metrics, define your own <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">GEval</code> metric (for example, <em>"citation correctness"</em> — does each cited file actually contain the claimed fact?) and report it in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">eval_report.json</code>.</li>
+      <li><strong>Hybrid retrieval:</strong> combine BM25 with vector search and report whether it improves Contextual Recall on the gold set.</li>
+      <li><strong>Feedback button:</strong> a thumbs-up / thumbs-down on each answer, written to the run log for offline review.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- GRADING RUBRIC -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="grading-rubric" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Grading Rubric</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <p>A suggested rubric for the supervisor — and a self-check before you submit.</p>
+    <table style="border-collapse:collapse;font-family:Tahoma,Arial,sans-serif;width:100%;">
+      <thead>
+        <tr>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">Area</th>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">Weight</th>
+          <th style="background-color:#eef3ff;border:1px solid #dfe7ff;color:#0047FF;padding:10px 12px;text-align:left;">What earns full marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Ingestion &amp; multi-format handling</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">10%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">All three formats load; Arabic extracted correctly; chunks tagged with domain/source/language.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Retrieval quality</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">15%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Multilingual embeddings, domain filtering works, cross-language retrieval verified.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">LangGraph design &amp; memory</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">20%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Clear node responsibilities, typed state, session memory demoably working, sensible fallbacks.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Citations &amp; honesty</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">10%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Every answer cites at least one real filename; no fabricated policies; clear refusals when out-of-corpus.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Tools &amp; robustness</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">10%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Three typed tools, validation errors recovered, max-step / max-tool limits enforced.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Evaluation (DeepEval)</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">15%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">All five metrics reported plus routing accuracy; per-case detail; honest discussion of failures.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Code quality &amp; structure</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">10%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Clean modular structure, type hints, pinned deps, ruff clean, no dead code.</td></tr>
+        <tr><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">Documentation &amp; demo</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">10%</td><td style="border:1px solid #dfe7ff;padding:10px 12px;vertical-align:top;">README + 5-command Quick Start works; architecture diagram present; demo recording covers memory + Arabic.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FINAL DELIVERABLES -->
+<div style="background-color:#ffffff;border-radius:12px;font-family:Tahoma,Arial,sans-serif;margin:20px auto 0;max-width:1100px;padding:20px;">
+  <h2 id="final-deliverables" style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:28px;margin:0 0 10px;">Final Deliverables</h2>
+  <div style="background-color:#f8faff;border-left:5px solid #0047FF;border-radius:8px;padding:20px;">
+    <ul>
+      <li>A runnable chat application — entry point of your choice (e.g. <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">app.py</code>), launched in one command.</li>
+      <li>The LangGraph workflow — router, memory, retrieval, agent, and answer responsibilities clearly separated in code.</li>
+      <li>The ingestion pipeline and the resulting persisted index.</li>
+      <li>Three typed tools with Pydantic input validation.</li>
+      <li>Full-session chat memory wired into the graph and demonstrated end-to-end in the demo recording.</li>
+      <li>The DeepEval evaluation script in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/evaluate.py</code> running against <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">tests/eval_cases.jsonl</code>.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">data/docs/</code> — the corpus provided in <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">atlas-corpus.zip</code> (HR, IT, Finance), placed in the expected folder layout.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/eval_report.json</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/run_logs.jsonl</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">outputs/final_report.md</code>.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">docs/demo.gif</code> (or <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.mp4</code>) — 60 to 90 second walkthrough including a multi-turn memory exchange and an Arabic question.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">docs/architecture.png</code> — architecture diagram.</li>
+      <li><code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.env.example</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">.gitignore</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">requirements.txt</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">README.md</code> + <code style="background-color:#eef3ff;border-radius:4px;color:#0b3cc1;padding:2px 5px;">LICENSE</code>.</li>
+    </ul>
+
+    <h3 style="color:#0047FF;font-family:Tahoma,Arial,sans-serif;font-size:21px;margin:18px 0 10px;">Suggested Submission Tree</h3>
+    <p>One reasonable layout — adapt it to match the stack you pick.</p>
+<pre style="background-color:#f0f0f0;border-radius:6px;border:1px solid #cccccc;font-family:Consolas,'Courier New',monospace;font-size:14px;line-height:1.45;overflow:auto;padding:12px;"><code>atlas-enterprise-assistant/
+├── README.md
+├── LICENSE
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── app.py                          ← chat UI entry point
+│
+├── src/
+│   ├── __init__.py
+│   ├── settings.py                 ← paths, model names, thresholds
+│   ├── prompts.py                  ← router prompt, answer prompt
+│   ├── graph.py                    ← LangGraph workflow
+│   ├── router.py                   ← HR / IT / Finance classifier
+│   ├── retriever.py                ← retrieval (domain-filtered)
+│   ├── memory.py                   ← session memory (checkpointer / store)
+│   ├── ingest.py                   ← corpus ingestion + indexing
+│   ├── tools.py                    ← three typed tools
+│   └── logging_setup.py            ← run_id + structured logs
+│
+├── tests/
+│   ├── evaluate.py                 ← DeepEval evaluation script
+│   └── eval_cases.jsonl            ← 10 provided test questions
+│
+├── data/
+│   └── docs/                       ← corpus provided in atlas-corpus.zip
+│       ├── hr/                     ← HR documents
+│       ├── it/                     ← IT documents
+│       └── finance/                ← Finance documents
+│
+├── outputs/
+│   ├── eval_report.json
+│   ├── run_logs.jsonl
+│   └── final_report.md
+│
+├── notebooks/
+│   ├── 01_eda.ipynb                ← corpus EDA (formats, languages, lengths)
+│   ├── 02_retrieval.ipynb          ← retrieval sanity-checking
+│   └── 03_eval_walkthrough.ipynb   ← discussion of DeepEval results
+│
+├── docs/
+│   ├── demo.gif                    ← 60-90s walkthrough
+│   └── architecture.png            ← LangGraph + RAG diagram
+│
+└── scripts/
+    └── reset.sh                    ← wipe index and rebuild
+</code></pre>
+  </div>
+</div>
+
+<div style="margin:24px auto 0;max-width:1100px;text-align:center;">
+  <figure>
+    <img src="https://i.postimg.cc/FzT9v9GW/deliv.jpg"
+         style="border-radius:10px;height:auto;max-width:80%;"
+         alt="Final Deliverables" />
+    <figcaption aria-hidden="true">Final Deliverables</figcaption>
+  </figure>
+</div>
+
+</body>
+</html>
