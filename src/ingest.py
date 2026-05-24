@@ -66,9 +66,34 @@ def _load_pdf(path: Path) -> str:
 
 def _load_docx(path: Path) -> str:
     from docx import Document as DocxDocument
+    from docx.table import Table
+    from docx.text.paragraph import Paragraph
 
     doc = DocxDocument(path)
-    return "\n\n".join(p.text for p in doc.paragraphs if p.text.strip())
+    parts: list[str] = []
+
+    for block in doc.element.body:
+        tag = block.tag.split("}")[-1]
+
+        if tag == "p":
+            text = Paragraph(block, doc).text.strip()
+            if text:
+                parts.append(text)
+
+        elif tag == "tbl":
+            for row in Table(block, doc).rows:
+                # python-docx repeats merged cells — deduplicate adjacent ones
+                cells: list[str] = []
+                last = None
+                for cell in row.cells:
+                    t = cell.text.strip()
+                    if t and t != last:
+                        cells.append(t)
+                        last = t
+                if cells:
+                    parts.append(" | ".join(cells))
+
+    return "\n\n".join(parts)
 
 
 _LOADERS: dict[str, Callable[[Path], str]] = {
@@ -82,7 +107,7 @@ _LOADERS: dict[str, Callable[[Path], str]] = {
 
 def _detect_language(text: str) -> str:
     """Classify text as 'en', 'ar', or 'bilingual' by Arabic-character ratio."""
-    arabic = sum(1 for c in text if "؀" <= c <= "ۿ")
+    arabic = sum(1 for c in text if 0x0600 <= ord(c) <= 0x06FF)
     ratio = arabic / max(len(text.strip()), 1)
     if ratio > 0.5:
         return "ar"
