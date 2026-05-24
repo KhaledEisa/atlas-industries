@@ -1,0 +1,36 @@
+# ── Embeddings & vector store ──────────────────────────────────────────────
+sentence-transformers>=2.7.0
+faiss-cpu>=1.7.4
+
+# ── LangChain ecosystem ────────────────────────────────────────────────────
+langchain>=0.2.0
+langchain-core>=0.2.0
+langchain-community>=0.2.0
+langchain-huggingface>=0.0.3
+langchain-text-splitters>=0.2.0
+langgraph>=0.2.0
+langchain-google-genai>=1.0.0
+langchain-groq>=0.1.0
+
+# ── Document processing ───────────────────────────────────────────────────
+pypdf>=4.0.0
+pdfplumber>=0.10.0
+python-docx>=1.1.0
+
+# ── Configuration & validation ────────────────────────────────────────────
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+
+# ── Logging ───────────────────────────────────────────────────────────────
+loguru>=0.7.0
+
+# ── Evaluation (M4) ───────────────────────────────────────────────────────
+deepeval>=0.21.0
+
+# ── UI (M3) ───────────────────────────────────────────────────────────────
+chainlit>=1.0.0
+
+# ── Development ───────────────────────────────────────────────────────────
+jupyter>=1.0.0
+ipykernel>=6.29.0
