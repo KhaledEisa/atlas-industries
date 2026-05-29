@@ -6,12 +6,12 @@ splits them with a recursive character splitter, embeds using multilingual
 BAAI/bge-m3, and persists a FAISS index to disk.
 
 Chunking strategy : RecursiveCharacterTextSplitter — 512 chars, 64 overlap.
-  Chosen over semantic splitting because it is deterministic, fast, and
-  predictable across all three file formats without requiring a second model.
+Chosen over semantic splitting because it is deterministic, fast, and
+predictable across all three file formats without requiring a second model.
 
 Embedding model   : BAAI/bge-m3
-  Handles English and Arabic in a single embedding space; strong cross-lingual
-  recall so an Arabic question can retrieve an English doc and vice versa.
+Handles English and Arabic in a single embedding space; strong cross-lingual
+recall so an Arabic question can retrieve an English doc and vice versa.
 """
 
 from __future__ import annotations

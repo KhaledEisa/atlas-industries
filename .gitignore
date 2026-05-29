@@ -3,6 +3,7 @@
 *.env
 
 # Python
+.pytest_cache
 __pycache__/
 *.py[cod]
 *.pyo
@@ -15,6 +16,8 @@ build/
 .venv/
 venv/
 env/
+
+.deepeval
 
 # Vector store index (rebuilt via reset.sh)
 data/vector_store/

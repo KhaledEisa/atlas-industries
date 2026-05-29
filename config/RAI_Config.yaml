@@ -1,0 +1,47 @@
+# ── Atlas Industries RAI Configuration ───────────────────────────
+# Responsible AI rules for the Atlas knowledge assistant
+# Read by the Agent and Composer nodes
+
+# ── Fabrication Rules ─────────────────────────────────────────────
+no_fabrication: true
+# Agent must never invent policies, numbers, or rules
+# If answer is not in retrieved chunks → use out_of_corpus_response
+
+out_of_corpus_response:
+  en: "This information is not available in the company documents."
+  ar: "هذه المعلومات غير متوفرة في وثائق الشركة."
+
+# ── Citation Rules ────────────────────────────────────────────────
+cite_sources: true
+# Every answer must end with a Sources section
+# Only real filenames from data/docs/ are allowed
+
+sources_header:
+  en: "Sources:"
+  ar: "المصادر:"
+
+# ── Language Rules ────────────────────────────────────────────────
+respond_in_user_language: true
+# Arabic question  → Arabic answer
+# English question → English answer
+# Never mix languages in the same answer
+
+# ── Safety Limits ─────────────────────────────────────────────────
+max_steps:           10
+max_tool_calls:      3
+max_checker_retries: 2
+
+# ── Domain Rules ──────────────────────────────────────────────────
+allowed_domains:
+  - hr
+  - it
+  - finance
+
+fallback_domain: finance
+# Used when Router confidence is low
+
+# ── Tone Rules ────────────────────────────────────────────────────
+tone: professional
+no_filler_phrases: true
+# Never say "Great question!" or "Certainly!"
+# Get straight to the answer

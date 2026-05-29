@@ -1,5 +1,8 @@
 from pathlib import Path
 
+import yaml
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 _ROOT = Path(__file__).resolve().parent.parent
@@ -37,3 +40,12 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+
+
+def load_rai_config() -> dict:
+    config_path = Path("config/RAI_Config.yaml")
+    with open(config_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+rai_config = load_rai_config()
